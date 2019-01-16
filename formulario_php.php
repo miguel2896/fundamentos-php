@@ -72,6 +72,7 @@ $idioma[] = 'Ingles';
 
 <footer > Miguel Angel Ortiz Mota <?php  echo year(); ?></footer>
 
+<?php //Hola Soy miguel el primer curso ?>
 
 </body>
 </html>
