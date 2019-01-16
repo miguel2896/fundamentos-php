@@ -1,4 +1,5 @@
 <?php include_once('datos_funciones_php.php'); 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -6,7 +7,12 @@
 	<title>Formulario</title>
 </head>
 <body>
-
+	<a href="modificar_archivo_txt.php">Modificar archivo</a>
+	<a href="formulario.php">Formulario</a>
+	<a href="index.php">Inicio</a><br>
+	<p>Hola, <?php echo isset($_SESSION['name']) ? $_SESSION['name'] : "Invitado"; ?> </p>
+<h3>Manejo de sesiones</h3>
+<p>Modificar archivo desde la interfas web</p>
 <form action="procesos_php.php" method="post" >
 	
 	<div class="formulario">
@@ -59,7 +65,7 @@
 	<button  type="submit">Enviar</button>
 </form>
 
-<footer > Miguel Angel Ortiz Mota <?php  echo year(); ?></footer>
+<footer > <?php debug($_SESSION); ?> Angel Ortiz Mota <?php  echo year(); ?></footer>
 
 
 </body>

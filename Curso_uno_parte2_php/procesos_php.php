@@ -10,14 +10,14 @@ $idioma= isset($_POST['idioma']) ? $_POST['idioma'] : '';
 $urgente= isset($_POST['urgente']) ? $_POST['urgente'] : '';
 $noticia= isset($_POST['noticia']) ? $_POST['noticia'] : '';
 
-echo "Hola {$nombre}, en {$idiomas[$idioma]}.<br/>";
+echo "Hola {$nombre}, en {$idiomas[$idioma]}.<br/>"; //devuelve el valor de nombre y el arreglo
 $es_urgente = $urgente == 1 ? 'Es' : 'No es';
 echo "Su pedido {$es_urgente} urgente.<br/>";
 echo "Gustaria resivir noticias de:<br/>";
 
-if(count($noticia))
+if(count($noticia)) //cuenta el tamaño del arreglo $noticia
 {
-   foreach ($noticia as $noticia_nueva) {
+   foreach ($noticia as $noticia_nueva) { //
         echo $noticia_nueva . "<br/>";
    }
 }

@@ -1,10 +1,11 @@
 <?php
+session_start();//con esto indicamos al navegador que podemos utilizar variables de sesion en esta pagina
 
-$idiomas[] = 'Español';
+$idiomas[] = 'Español';//arreglo
 $idiomas[] = 'Frances';
 $idiomas[] = 'Ingles';
 
-function debug($value){ //depurar
+function debug($value){ //debug=depurar
     echo '<pre>';
      var_dump($value);
      echo '</pre>';
