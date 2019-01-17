@@ -17,10 +17,33 @@ function run_query(){
 
 }
 
-function delete($id){
+function delete($id){ // Función para eliminar un dato de la BD
 global $mysqli;
 $sql="DELETE from usuario where id = {$id}";
 $mysqli->query($sql);
 }
- ?>
+
+function nuevo($id, $nombre, $password){ //función para insertar datos a la BD
+	global $mysqli; //la variable de conexion se hace global
+	$sql="INSERT into usuario (id,nombre,password) values ('{$id}','{$nombre}','{$password}')";
+	$mysqli->query($sql);
 }
+
+function obtener_usuario_por_id($id){//función para consultar datos de la BD
+	global $mysqli;
+	$sql="SELECT nombre,password from usuario where id={$id}";
+	$resultado=$mysqli->query($sql);
+	if ($resultado->num_rows) {
+		return $resultado->fetch_assoc();
+		return false;
+	}
+}
+
+function actualizar($id, $nombre, $password){//Función para actulizar datos de la BD
+    global $mysqli;
+    $sql="UPDATE usuario set nombre='{$nombre}', password='{$password}' where id='{$id}'";	
+    $mysqli->query($sql);
+}
+
+ ?>
+
