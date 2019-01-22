@@ -1,3 +1,27 @@
+<form action="borrar" method="POST">
+   <h4>Eliminar por id</h4>
+   <label>ID</label>
+   <input type="texto" name="id">
+    
+   <br><br>
+   <input type="submit" name="" value="Enviar">
+
+</form>
+<br>
+<h4>Consultar para editar por id</h4>
+<form action="editar" method="POST">
+   
+   <label>ID</label>
+   <input type="texto" name="id">
+
+
+   <br><br>
+   <input type="submit" name="" value="Enviar">
+
+</form>
+
+</body>
+</html>
 <?php 
 if(isset($usuario)){
 foreach ($usuario->result() as $user) { ?>
@@ -11,7 +35,3 @@ foreach ($usuario->result() as $user) { ?>
 	echo "<p>Error en la aplicación</p>";
 }
  ?>
-
-
-</body>
-</html>
