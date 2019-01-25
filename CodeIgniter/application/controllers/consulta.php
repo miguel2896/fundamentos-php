@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Consulta extends CI_Controller  //Clase del controlador que simpre ereda de la clase CI_controller
 {
-function __construct()
+	function __construct()
 	{
 		parent::__construct();//constructor del padre
 		$this->load->helper('form');//inicializar el helper form donde estan todas las funciones
@@ -14,21 +14,22 @@ function __construct()
 		$this->load->helper('url'); //este he
 
 	}
+
 	function index(){//hay que utilizar en la url el 'index' despues del controlador 'consulta' para que funcione
 		$data['segmento']=$this->uri->segment(3);//retorna el segmento de la url segun el inice indicado
 		$this->load->view('prueba/header');
-		if(!$data['segmento']){//si es diferente el dato en la url va a mandar todos los datos
-		$data['usuario'] = $this->nuevousuario_model->obtenerUsuarios();
-		}else{//de lo contrario solo obtiene los datos de uno solo respecto al id
-			$data['usuario'] = $this->nuevousuario_model->obtenerUsuario($data['segmento']);//el dato ingresado en la url va a retornar la información de la BD respecto al ID
-		}
+			if(!$data['segmento']){//si es diferente el dato en la url va a mandar todos los datos
+					$data['usuario'] = $this->nuevousuario_model->obtenerUsuarios();
+				}else{//de lo contrario solo obtiene los datos de uno solo respecto al id
+					$data['usuario'] = $this->nuevousuario_model->obtenerUsuario($data['segmento']);//el dato ingresado en la url va a retornar la información de la BD respecto al ID
+					}
 		$this->load->view('prueba/consultaUsuario',$data);
 	}
 
-function nuevo(){
-	$this->load->view('prueba/header');
+	function nuevo(){
+		$this->load->view('prueba/header');
 		$this->load->view('prueba/pruebauno');
-}
+	}
 
 	function recibirdatos(){
 
