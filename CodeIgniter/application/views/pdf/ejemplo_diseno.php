@@ -55,15 +55,27 @@
     <h2>PDF</h2>
     <?php echo form_open('Prueba/descargar/'); ?>
       <?php
+            $id = array(//arreglo donde se especifican los parametros del input='Caja de texto'
+              'name'=>'id',
+               'placeholder' =>'Ingresa'
+            );
             $nombre = array(//arreglo donde se especifican los parametros del input='Caja de texto'
               'name'=>'nombre',
                'placeholder' =>'Ingresa tu usuario'
             );
-
+            $password = array(//arreglo donde se especifican los parametros del input='Caja de texto'
+              'name'=>'password',
+               'placeholder' =>'Ingresa tu password'
+            );
       ?> 
- 
+      <?php echo form_label('Id:','id') ?>
+      <?php echo form_input($id) ?>
+        <br><br>
       <?php echo form_label('Nombre:','nombre') ?>
       <?php echo form_input($nombre) ?>
+        <br><br>
+      <?php echo form_label('Password:','password') ?>
+      <?php echo form_input($password) ?>
         <br><br>
       <?php echo form_submit('','Generar') ?>
       
