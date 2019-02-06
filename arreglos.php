@@ -10,7 +10,7 @@
 $array = array(
 	"uno"=>"Miguel", 
 	"dos"=>"Angel", 
-	"tres"=>"Ortiz"
+	"tres"=>"Mota"
 );
 while (list(, $valor) = each($array)) {
     //echo "Valor: $valor<br />\n";
